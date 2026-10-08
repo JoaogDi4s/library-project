@@ -1,0 +1,16 @@
+### Listar livros
+GET http://localhost:8080/books
+
+### Buscar livro pelo id
+GET http://localhost:8080/books/1
+
+### Criar livro
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Refactoring",
+  "author": "Martin Fowler",
+  "year": 1999,
+  "genre": "Software Engineering"
+}

@@ -2,6 +2,9 @@ package com.library.libraryproject.Book;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import jakarta.validation.Valid;
+
 import java.util.List;
 
 @Service
@@ -23,6 +26,7 @@ public class BookService {
     }
 
     @Transactional
+    @Valid 
     public Book create(Book book) {
         if (book.getYear() > java.time.Year.now().getValue()) {
             throw new IllegalArgumentException("O ano não pode ser maior que o atual.");
