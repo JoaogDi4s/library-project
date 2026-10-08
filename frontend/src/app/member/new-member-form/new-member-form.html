@@ -1,0 +1,31 @@
+<form [formGroup]="form" (ngSubmit)="salvar()" class="max-w-md mx-auto p-6 space-y-4 bg-white rounded-lg shadow">
+    <h2 class="text-2xl font-bold text-gray-800">Novo membro</h2>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Nome</label>
+        <input formControlName="name" class="mt-1 w-full border rounded px-3 py-2" />
+        @if (form.controls.name.touched && form.controls.name.invalid) {
+        <p class="text-sm text-red-600">O nome é obrigatório (até 100 caracteres).</p>
+        }
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">E-mail</label>
+        <input type="email" formControlName="email" class="mt-1 w-full border rounded px-3 py-2" />
+        @if (form.controls.email.touched && form.controls.email.invalid) {
+        <p class="text-sm text-red-600">Informe um e-mail válido (até 100 caracteres).</p>
+        }
+    </div>
+
+    <div>
+        <label class="block text-sm font-medium text-gray-700">Telefone</label>
+        <input type="tel" formControlName="phone" class="mt-1 w-full border rounded px-3 py-2" />
+        @if (form.controls.phone.touched && form.controls.phone.invalid) {
+        <p class="text-sm text-red-600">Use apenas números, entre 10 e 15 dígitos.</p>
+        }
+    </div>
+
+    <button type="submit" class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700">
+        Salvar
+    </button>
+</form>
