@@ -25,7 +25,9 @@
         }
     </div>
 
-    <button type="submit" class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700">
+    <button type="submit"
+        class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer transition-colors duration-300"
+        [disabled]="form.invalid">
         Salvar
     </button>
 </form>
